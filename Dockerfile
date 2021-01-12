@@ -1,7 +1,7 @@
-FROM python:3.7-alpine3.8
+FROM python:3.7-alpine3.12
 
 RUN apk update \
-    && apk add --no-cache g++ libffi libffi-dev openssl openssl-dev shadow python3-dev\
+    && apk add --no-cache g++ bash libffi libffi-dev libstdc++ openssl openssl-dev shadow python3-dev \
     && pip3 install --upgrade pip \
     && pip3 install mitmproxy flask \
     && apk del --purge g++ libffi-dev openssl-dev python3-dev\
